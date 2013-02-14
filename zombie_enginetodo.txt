@@ -4,13 +4,13 @@
 
 
 
+use func as is and say that the last round or hail of bullets was not enough 
+now you must pick a different weapon to continue the fight or die
+
 
 #:mag count only counts the bullets in active weapon
-#:must return bullets to bag or make a mag count for each weapon
+#:must return bullets to bag when switching weps or at end of fight
 #:otherwise you will lose bullets if weapon automatically reloads later on
-
-
-
 
 
 

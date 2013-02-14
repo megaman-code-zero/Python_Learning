@@ -5,7 +5,7 @@ def test():
     print "to access functions or classes you must type in the module name \nfirst  to access its functions and then set variables to names of classes then use\n \'.\' dot notation to access the methods and attributes"
 
 class Avatar():
-    class 
+    class bag(object): 
         weapon = []
         amount_of_ammo = []
         vehicle = []
@@ -18,12 +18,12 @@ class Avatar():
         Health_Points  = 100
         Stamina_Points = 100
         prime_weapons   = ('Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56  ''Weight:  9.05 lbs  Ammo Capacity :30',
-                          'Knife 4:' 'Tops Anaconda Tanto                                Weight: 1.50 lbs Blade  Length:9.5',
-                          'Gun 5:' 'Heckler & Koch MP5K           ' 'Cal: 9mm    ' 'Weight: 4.78 lbs ' 'Ammo Capacity :30',)
+                           'Knife 4:' 'Tops Anaconda Tanto                                Weight: 1.50 lbs Blade  Length:9.5',
+                           'Gun 5:' 'Heckler & Koch MP5K           ' 'Cal: 9mm    ' 'Weight: 4.78 lbs ' 'Ammo Capacity :30',)
 
         semi_prime = ('Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62  ''Weight: 10.93 lbs  Ammo Capacity :20',
-                          'Knife 2:' 'ColdSteel  O Katana                                Weight: 3.00 lbs Blade  Length:36.0',
-                          'Gun 1:' 'Colt New Frontier 44 Special  ' 'Cal:.44     ' 'Weight: 2.80 lbs ' 'Ammo Capacity :6',)
+                      'Knife 2:' 'ColdSteel  O Katana                                Weight: 3.00 lbs Blade  Length:36.0',
+                      'Gun 1:' 'Colt New Frontier 44 Special  ' 'Cal:.44     ' 'Weight: 2.80 lbs ' 'Ammo Capacity :6',)
 
     class Victor(bag):
 
@@ -52,16 +52,16 @@ class Avatar():
 
         semi_prime = ('Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56  ''Weight:  9.05 lbs  Ammo Capacity :30',
                       'Knife 1:' 'Gerber Parang                                      Weight: 1.35 lbs Blade  Length:13.5',
-                      'Ammo 5: .44             Cal:.44      ' 'Ammo Weight: 4.5 lbs  Amount:25',)
+                      'Gun 1:' 'Colt New Frontier 44 Special  ' 'Cal:.44     ' 'Weight: 2.80 lbs ' 'Ammo Capacity :6',)
 
 class The_GunRoom(object):
 
-    Riffle_rack =[
-             'Riffle 1:'  'Heckler & Koch MG4  Machinegun               Cal:5.56 M''Weight: 17.96 lbs  Ammo Capacity :200',
-             'Riffle 2:'  'Remington Target Tactical Sniper riffle      Cal:308   ''Weight: 13.85 lbs  Ammo Capacity :4',
-             'Riffle 3:'  'Remington Model 700 SPS Tactical BlackHawk   Cal:308   ''Weight:  8.85 lbs  Ammo Capacity :4',
-             'Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56  ''Weight:  9.05 lbs  Ammo Capacity :30',
-             'Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62  ''Weight: 10.93 lbs  Ammo Capacity :20',]
+    Riffle_rack =[                                                      
+             'Riffle 1:'  'Heckler & Koch MG4  Machinegun               Cal:5.56 M ''Weight: 17.96 lbs  Ammo Capacity :200',
+             'Riffle 2:'  'Remington Target Tactical Sniper riffle      Cal:308    ''Weight: 13.85 lbs  Ammo Capacity :4',
+             'Riffle 3:'  'Remington Model 700 SPS Tactical BlackHawk   Cal:308    ''Weight:  8.85 lbs  Ammo Capacity :4',
+             'Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56   ''Weight:  9.05 lbs  Ammo Capacity :30',
+             'Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62   ''Weight: 10.93 lbs  Ammo Capacity :20',]
 
     guns =(
              'Gun 1:' 'Colt New Frontier 44 Special  ' 'Cal:.44     ' 'Weight: 2.80 lbs ' 'Ammo Capacity :6',
