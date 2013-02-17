@@ -1,49 +1,108 @@
 
 
+#:Machine Gun Ranges
+return ammo to bag  at the end of fight
+
+  
+
+Currently: its called when kill_range >= mag_count
+
+if it takes more bullets then you have in magazine to kill zombie
+    then check if you have more bullets 
+    
+    Does_not_ask it automatically re-loads weapon
+        kill_completion
+        if enough bullets in bag and some left in gun:
+            then it loads till cap then shoots and subtracts again
+            to finish kill
+        elif some bullets + bullets in bag complete kill
+            loads remaining bullets, clears bag of ammo
+            completes kill and clears magazine
+             
+             
+        no ammo in mag and no ammo in bag:
+            'returns' you to change weapon
+
+        if mag == 0 and bag > 0 
+            re-load or switch
+            if re_load 
+                if bag > mag cap
+                    load and then sub kill bullets
+                    return
+                #is this enough to kill zombie ?
+                elif bag < mag_cap and bag > 0    
+                    bag_count = 0
+                    mag_count = bag
+                    m_count - k_range
+
+        
+        
+z_count = 4
+b_count = 2
+m_count = 0
+k_diff = 4 - 0 = -4
+
+I pass it through and this is what happens:
+
+b_count = 0
+        
+m_count = 2
+m_count = 4 - 2
+m_count = -2
+
+z killed..which is not true
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+if m_count > 0 and can complete kill          
+z_kill = 3
+I have 5 bullets
+I kill zombie
+I have 2 bullets left
+k_diff = 3 - 2 = 1
+m_load
+m_count = 6
+m_count = 6 - 1
+zombie is now dead
+I have 5 bullets left
+
+z_kill = 3
+m_count = 2
+k_diff = 3 - 2 = 1
+b_count = 1 bullet
+m_load
+b_count = 0
+m_count = 1
+m_count = 1 -1
+m_count = 0
 
 
 
 
-use func as is and say that the last round or hail of bullets was not enough 
-now you must pick a different weapon to continue the fight or die
-
-
-#:mag count only counts the bullets in active weapon
-#:must return bullets to bag when switching weps or at end of fight
-#:otherwise you will lose bullets if weapon automatically reloads later on
-
-
-
-
-
-
-
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
 
 
 
@@ -57,3 +116,39 @@ now you must pick a different weapon to continue the fight or die
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

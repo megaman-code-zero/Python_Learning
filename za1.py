@@ -577,7 +577,7 @@ def l_mod(partial):
         print "Your weapons:"
         for w in player.weapon:
             print w
-        
+
         #:Displays ammo from caliver[] Dictionary instead
         if partial == 3:
             if caliber:
@@ -681,16 +681,16 @@ def l_mod(partial):
                 wammo_type.append(x[36:47])
     #:Below appends to ammo_type the caliber of the ammo in your bag
     ammo_cal = []
-    #b_cal = []    
+    #b_cal = []
     if caliber:
         for k,v in caliber.iteritems():
             if v > 0 :
                 ammo_cal.append(k)
-    '''            
+    '''
     if player.amount_of_ammo:
         for a in player.amount_of_ammo:
             if 'Cal' in a:
-                b_cal.append(a[24:35])    
+                b_cal.append(a[24:35])
      for x in b_cal:
         print "this is player amount ...%r" % x
      for x in ammo_cal:
@@ -707,7 +707,7 @@ def l_mod(partial):
 
     #:Calls function that checks and returns caliber of weapon and ammo available
     weapons_and_caliber = w_and_a_check(wep_n_cal,wammo_type,ammo_cal)
-    
+
     #:checks that weapon picked has ammo returns viable_firearm
     def ammo_availability():
         global viable_firearm
@@ -868,7 +868,7 @@ def l_mod(partial):
             print active_weapon[0]
             print "\n"
 
-    #: ########################################################    
+    #: ########################################################
     '''
     if knives:
         print "we have liftoff and knives"
@@ -969,8 +969,8 @@ def l_mod(partial):
             print "your weapon is"
             print active_weapon[0]
             print "\n"
-    
-    
+
+
     #:Changes weapons_and_ammo from a set to a list
     weapons_and_ammo = list(viable_firearm)
     #:Function returns index of caliber in list
@@ -1057,10 +1057,8 @@ def l_mod(partial):
         return player.amount_of_ammo
     for x in active_weapon:
         if 'Knife' not in x:
-            weapons_loader(ammo_index)    
+            weapons_loader(ammo_index)
 
-      
-    
 def zombie_engine():
     global player
     global weapon
@@ -1077,7 +1075,7 @@ def zombie_engine():
     global stamina
     global weapons_switch
     global partial
-    weapons_switch = 0   
+    weapons_switch = 0
     #:####!GLOBALS!#####
     '''
      #:global check naming it global here did not work
@@ -1087,16 +1085,16 @@ def zombie_engine():
      #:It lOokS liKe you hAvE tO use global twice when working with a function inside a function
      global color
      color = 'red'
-     print "the color pre func is %s" % color    
+     print "the color pre func is %s" % color
      def f_color():
         global color
         print "the color inside func is %s" % color
         print "now i'm setting color to 'blue'"
         color  = 'blue'
         print "the color is now %s" % color
-     f_color()    
+     f_color()
      p rint "after f_color() color is %s" % color
-    ''' 
+    '''
     #.!Check for the type of weapon being used and determine weather its a players
     #   prime, semi or non prime weapon
     #:!Zombies are Easy Medium or Hard depending on 'active_weapon
@@ -1107,13 +1105,12 @@ def zombie_engine():
     #.allow to switch weapons when zombie fight ends
     #:!Counting down the amount of zombies
     #:!Counting down the amount of stamina
-    #:Make stamina ammo does not go negative if they go to zero you die on zero or on
-    #:    whatever zombie takes you to zero and lower
+    #:!Make stamina ammo does not go negative if they go to zero you die on zero or on
+    #:!    whatever zombie takes you to zero and lower
     #:Remeber that the machinegun fires off more rounds then regular firearms
-    #:    make changes accordingly
 
     print #:########################################################################################
-
+	
     #.check which type of weapon you are using
     for x in active_weapon:
         if 'Gun' in x :
@@ -1126,11 +1123,12 @@ def zombie_engine():
             mag_count = 0
             weapon = 'Knife'
             print "So you have picked a blade to decimate the unrighteous ones, quite brave"
-       
+
     stamina = player.Stamina_Points
     weak_z_range = zombie_classes.Zombie_Mod.Weak()
     medium_z_range = zombie_classes.Zombie_Mod.Medium()
     strong_z_range = zombie_classes.Zombie_Mod.Strong()
+
 
     Zombies = 0
     for p in player.prime_weapons:
@@ -1149,8 +1147,8 @@ def zombie_engine():
             if x in s:
                 break
             elif s not in x and not Zombies:
-                Zombies = 'Strong' 
-   
+                Zombies = 'Strong'
+
     #:Ammo Access and Counter
     #:mag_count is an int
     mag_cap = mag_count #This is the ammo capacity the active weapon holds
@@ -1168,113 +1166,134 @@ def zombie_engine():
     if partial < 3:
         print "Your stamina is %s " % stamina
     if partial == 3:
-        print "let the slaughter continue"        
+        print "let the slaughter continue"
     print "there are %r zombies" % zombie_count
     print "zombie strength is %s\n" % Zombies
-    
-     #:known problem reloads weapon magazine capacity even if rounds already in weapon
-     #:m_and_b_count are probably in wrong part of func
-    def active_ammo_in_bag(mag_count):
+
+
+    #:put bullets back in magazine when switching weps and at end of battle if left over
+    def active_ammo_in_bag(mag_count,kill_range):
         global weapons_switch
-        mag_count = 0  #This sets the weapon to zero so it doesn't go into negatives
         m_and_b_count = {'mag_count':0 ,'bag_count':0 }
-        
-        #:if no more ammo for weapon in mag and in bag then only choice is to change weapon
-        #:other weps might be viable this kicks me out should serve l_mod outside
-        if caliber[ammo_in_bag] == 0:
+        k_diff = kill_range - mag_count
+        #:If some rounds in mag and enough in bag to complete kill
+        if mag_count > 0 and caliber[ammo_in_bag] >= k_diff:
+            print "the last %d rounds where not enough to kill the zombie" % mag_count
+            print "you do a quick re-load and shoot some more"
+            if caliber[ammo_in_bag] >= mag_cap:
+                m_and_b_count['bag_count'] = caliber[ammo_in_bag] - mag_cap
+                m_and_b_count['mag_count'] = mag_cap
+                m_and_b_count['mag_count'] = m_and_b_count['mag_count'] - k_diff
+                print "that thing is dead now"
+                return m_and_b_count
+            #:If I m_count + b_count = complete kill    
+            elif caliber[ammo_in_bag] == k_diff:
+                m_and_b_count['bag_count'] = 0
+                m_and_b_count['mag_count'] = caliber[ammo_in_bag]
+                m_and_b_count['mag_count'] = m_and_b_count['mag_count'] - k_diff
+                print "mag should be zero %d" % m_and_b_count['mag_count']
+                print "yep that did it"
+                return m_and_b_count
+                
+        mag_count = 0  #This sets the weapon to zero so it doesn't go into negatives
+
+        #:if no ammo for weapon in mag or bag only choice is to change weapon
+        if mag_count == 0 and caliber[ammo_in_bag] == 0:
             print "You have run out of ammo for this weapon"
             weapons_switch = '2'
-            return m_and_b_count           
+            return m_and_b_count
+        
         #:This checks if the zombie is going to run ammo down to zero or lower
-        if weak_z_range.h_g_range >= mag_count:
+        if mag_count <= kill_range and caliber[ammo_in_bag] > 0:
             print "you mag is out of ammo"
+            print "and the zombies are still coming at ya"
             print "to re-load weapon press '1' to switch weapon press '2'"
-            switch_and_load = raw_input(prompt)                
+            switch_and_load = raw_input(prompt)
             #active weapons reload
             if switch_and_load == '1' and caliber[ammo_in_bag] > mag_cap:
                 if caliber[ammo_in_bag] > mag_cap:
+                    print "You fully re-load the weapon as fast as you can"
+                    print "and start shooting"
                     m_and_b_count['bag_count'] = caliber[ammo_in_bag] - mag_cap
                     m_and_b_count['mag_count'] = mag_cap
-                #elif caliber[ammo_in_bag] <= mag_cap:
-                elif caliber[ammo_in_bag] > 0 <= mag_cap:
+                    m_and_b_count['mag_count'] = m_and_b_count['mag_count'] - kill_range
+                #:Is this enough to kill zombie
+                elif caliber[ammo_in_bag] < mag_cap and caliber[ammo_in_bag] > 0:
+                    print "these are the last bullets for this weapon"
+                    print "you shoot hoping they will kill the zombie"
                     m_and_b_count['bag_count'] = 0
-                    m_and_b_count['mag_count'] = caliber[ammo_in_bag] 
-            elif switch_and_load == '2':
-                #:So the above has ammo active caliber ammo set to zero at all times 
-                #:even when not true need to make it so that caliber adds all the bullets
-                #:inside the weapons magazine and returns it to the bag
-                #:At this point I have no ammo in magazine but may still have ammo in
-                #:bag, I need to know which
-                print "\n\nyou chose to switch weapons"                
+                    m_and_b_count['mag_count'] = caliber[ammo_in_bag]
+                    if m_and_b_count['mag_count'] >= kill_range:
+                        m_and_b_count['mag_count'] = m_and_b_count['mag_count'] - kill_range
+                        print "fate is in your favor today the deadite falls"
+                    else:
+                        print "the last bullets in your weapon were not enough to kill the walker"
+                        m_and_b_count['mag_count'] = 0
+            elif switch_and_load == '2' :            
+                print "\n\nyou chose to switch weapons"
                 weapons_switch = '2'
                 m_and_b_count['bag_count'] = caliber[ammo_in_bag]
                 return m_and_b_count
         return m_and_b_count
-     
-     
-    '''
+
      #Stamina killer
-     def stamina_killer():
+    def stamina_killer():
         if stamina <= 0:
             print "all the zombies took their toll on you"
             print "and for this sin you die"
             exit()
-    
-     #checks if Machinegun
-     def saw_or_mp5k():
-        if '5.56 M' in active_weapon or '9mm' in active_weapon:
-            alt_wep = 'machinegun'
-            return alt_wep
-        
-     alt_wep = saw_or_mp5k()
+            
 
-     print "this is active wep %s" % active_weapon
-     #Machine Gun Ranges
-     def m_g_range():
+    #Machine Gun Ranges
+    def m_g_range():
         ma_range = 'cat'
         for x in active_weapon:
             if '9mm' in x or '5.56 M' in x:
-                print "we are here to x"
-        if '9mm' in active_weapon or '5.56 M' in active_weapon:
-            print "we are machinegun"
-            if player.Name == 'Anna' and'9mm' in active_weapon:  
-                ma_range = random.randint(3, 5)
-            elif '9mm' in active_weapon and (player.Name == 'Victor' or player.Name == 'Gabriel'): 
-                ma_range = random.randint(7, 13)        
-            if  player.Name == 'Victor' and '5.56 M' in player.active_weapon:
-                ma_range = random.randint(5, 9)
-            elif '5.56 M' in active.weapon and (player.Name == 'Gabriel' or player.Name == 'Anna'):   
-                ma_range = random.randint(15, 22)
-        return ma_range
+                print "we are machinegun"
+            if '9mm' in x:
+                wep = '9mm'
+            elif '5.56 M':
+                wep = '5.56 M'
+        print wep
         
-     m_range = m_g_range()
-     print m_range
-    '''
-    #:choosing wrong ammo  in riffle and gun crashes the game
+        if player.Name == 'Anna' and wep == '9mm':
+            ma_range = random.randint(3, 5)
+        elif '9mm' in wep and (player.Name == 'Victor' or player.Name == 'Gabriel'):
+            ma_range = random.randint(7, 13)
+        elif player.Name == 'Victor' and wep == '5.56 M' :
+            ma_range = random.randint(5, 9)
+        if wep == '5.56 M' and (player.Name == 'Gabriel' or player.Name == 'Anna'):
+            ma_range = random.randint(15, 22)
+        
+        print "in func range kill_range %d" % ma_range
+        return ma_range
+    m_range = m_g_range()
+    print m_range
+    
+    #:Machinegun Ammo and return bullets at end of fight to weapons mag
     #:two guns shoot more bullets the MP5K 9mm and the machinegun
-    #:need ranges for all characters and plug in
     #:Weak Zombies
     if Zombies == 'Weak' and weapon == 'Gun':
         for z in range(zombie_count):
-            mag_count = mag_count - weak_z_range.h_g_range
-            if 2 <= mag_count < 4:
+            kill_range = weak_z_range.h_g_range
+            print "k_range %r" % kill_range
+            if 1 <= mag_count < 4:
                 print "You are about to run out of ammo"
+            if mag_count >= weak_z_range.h_g_range:
+                mag_count = mag_count - weak_z_range.h_g_range
             #:This checks if the zombie is going to run ammo down to zero or lower
-            if weak_z_range.h_g_range >= mag_count:
-                ammo_and_bag_count = active_ammo_in_bag(mag_count)
+            elif mag_count <= weak_z_range.h_g_range:
+                ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
                 caliber[ammo_in_bag] = ammo_and_bag_count['bag_count']
-                mag_count = ammo_and_bag_count['mag_count']                    
-                #print "this is mag count just outside of func %d " % mag_count
-                #print "outside of func this is caliber ammo in bag %d" % caliber[ammo_in_bag]
-                if weapons_switch == '2': 
+                mag_count = ammo_and_bag_count['mag_count']
+                if weapons_switch == '2':
                     partial = 3
                     print "there are %r zombies left \n\n" % zombie_count
                     return
             print "you killed a zombie "
             zombie_count = zombie_count - 1
-            #print "mag count outside of func is now %d" % mag_count
         stamina = stamina - weak_z_range.h_g_stamina
-        #stamina_killer()
+        stamina_killer()
         print "ammo left in bag for this weapon is now %r" % caliber[ammo_in_bag]
         print "your have %s rounds left in weapon" % mag_count
         print "your stamina is now %s" % stamina
@@ -1283,19 +1302,22 @@ def zombie_engine():
             print "you stabbed and killed a zombie"
         zombie_count = zombie_count - 1
         stamina = stamina - weak_z_range.k_stamina
-        #stamina_killer()
+        stamina_killer()
         print "Your Stamina is now %s" % stamina
     elif Zombies == 'Weak' and weapon == 'Riffle':
         for z in range(zombie_count):
-            mag_count = mag_count - weak_z_range.r_range
-            if 2 <= mag_count < 4:
+            kill_range = weak_z_range.r_range
+            print "w_r_range is %r" % weak_z_range.r_range
+            if 1 <= mag_count < 4:
                 print "You are about to run out of ammo"
+            if mag_count >= weak_z_range.r_range:
+                mag_count = mag_count - weak_z_range.r_range
             #:This checks if the zombie is going to run ammo down to zero or lower
-            if weak_z_range.h_g_range >= mag_count:
-                ammo_and_bag_count = active_ammo_in_bag(mag_count)
+            elif mag_count <= weak_z_range.r_range:
+                ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
                 caliber[ammo_in_bag] = ammo_and_bag_count['bag_count']
                 mag_count = ammo_and_bag_count['mag_count']
-            if weapons_switch == '2': 
+            if weapons_switch == '2':
                 partial = 3
                 print "there are %r zombies left \n\n" % zombie_count
                 return
@@ -1303,29 +1325,32 @@ def zombie_engine():
             zombie_count = zombie_count - 1
             #print "mag count outside of func is now %d" % mag_count
         stamina = stamina - weak_z_range.r_stamina
-        #stamina_killer()
+        stamina_killer()
         print "ammo left in bag for this weapon is now %r" % caliber[ammo_in_bag]
         print "your have %s rounds in weapon" % mag_count
         print "your stamina is now %s" % stamina
     #:Medium Zombies
     if Zombies == 'Medium' and weapon == 'Gun':
-        mag_count = mag_count -  medium_z_range.h_g_range
         for z in range(zombie_count):
-            if 2 <= mag_count < 4:
+            kill_range = medium_z_range.h_g_range
+            print "this is m_hg_range %r" % medium_z_range.h_g_range
+            if 1 <= mag_count < 4:
                 print "You are about to run out of ammo"
+            if mag_count >= medium_z_range.h_g_range:
+                mag_count = mag_count - medium_z_range.h_g_range
             #:This checks if the zombie is going to run ammo down to zero or lower
-            if weak_z_range.h_g_range >= mag_count:
-                ammo_and_bag_count = active_ammo_in_bag(mag_count)
+            elif mag_count <= medium_z_range.h_g_range:
+                ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
                 caliber[ammo_in_bag] = ammo_and_bag_count['bag_count']
                 mag_count = ammo_and_bag_count['mag_count']
-            if weapons_switch == '2': 
+            if weapons_switch == '2':
                 partial = 3
                 print "there are %r zombies left \n\n" % zombie_count
                 return
             print "you killed a zombie "
             zombie_count = zombie_count - 1
-        stamina = stamina - weak_z_range.r_stamina
-        #stamina_killer()
+        stamina = stamina - medium_z_range.h_g_stamina
+        stamina_killer()
         print "ammo left in bag for this weapon is now %r" % caliber[ammo_in_bag]
         print "your have %s rounds in weapon" % mag_count
         print "your stamina is now %s" % stamina
@@ -1334,48 +1359,55 @@ def zombie_engine():
             print "you slashed and killed a zombie"
             zombie_count = zombie_count - 1
         stamina = stamina - medium_z_range.k_stamina
-        #stamina_killer()
+        stamina_killer()
         print "Your Stamina is now %s" % stamina
     elif Zombies == 'Medium' and weapon == 'Riffle':
-        mag_count = mag_count - medium_z_range.r_range
         for z in range(zombie_count):
-            if 2 <= mag_count < 4:
-                print "You are about to run out of ammo"
-            #:This checks if the zombie is going to run ammo down to zero or lower
-            if weak_z_range.h_g_range >= mag_count:
-                mag_count = 0
-                ammo_and_bag_count = active_ammo_in_bag(mag_count)
-                caliber[ammo_in_bag] = ammo_and_bag_count['bag_count']
-            if weapons_switch == '2': 
-                partial = 3
-                print "there are %r zombies left \n\n" % zombie_count
-                return
-            print "you killed a zombie "
-            zombie_count = zombie_count - 1
-        stamina = stamina - weak_z_range.r_stamina
-        #stamina_killer()
-        print "ammo left in bag for this weapon is now %r" % caliber[ammo_in_bag]
-        print "your have %s rounds in weapon" % mag_count
-        print "your stamina is now %s" % stamina
-    #:Strong Zombies
-    if Zombies == 'Strong' and weapon == 'Gun':
-        for z in range(zombie_count):    
-            mag_count = mag_count - strong_z_range.h_g_range
+            kill_range = medium_z_range.r_range
+            print "r_range is %r" % medium_z_range.r_range
             if 1 <= mag_count < 4:
                 print "You are about to run out of ammo"
-            #:This checks if zombie is going to run ammo down to zero or lower
-            if weak_z_range.h_g_range >= mag_count:
-                ammo_and_bag_count = active_ammo_in_bag(mag_count)
+            if mag_count >= medium_z_range.r_range:
+                mag_count = mag_count - medium_z_range.r_range            
+            #:This checks if the zombie is going to run ammo down to zero or lower
+            elif mag_count <= medium_z_range.r_range:
+                ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
                 caliber[ammo_in_bag] = ammo_and_bag_count['bag_count']
-                mag_count = ammo_and_bag_count['mag_count'] 
+                mag_count = ammo_and_bag_count['mag_count']
             if weapons_switch == '2':
                 partial = 3
                 print "there are %r zombies left \n\n" % zombie_count
                 return
             print "you killed a zombie "
-            zombie_count = zombie_count - 1            
+            zombie_count = zombie_count - 1
+        stamina = stamina - medium_z_range.r_stamina
+        stamina_killer()
+        print "ammo left in bag for this weapon is now %r" % caliber[ammo_in_bag]
+        print "your have %s rounds in weapon" % mag_count
+        print "your stamina is now %s" % stamina
+    #:Strong Zombies
+    if Zombies == 'Strong' and weapon == 'Gun':
+        for z in range(zombie_count):
+            kill_range = strong_z_range.h_g_range
+            print "K_range %r" % kill_range
+            if 1 <= mag_count < 4:
+                print "You are about to run out of ammo"
+            if mag_count >= strong_z_range.h_g_range:
+                mag_count = mag_count - strong_z_range.h_g_range
+                print "you have %d bullets left in the chamber" % mag_count
+            #:This checks if zombie is going to run ammo down to zero or lower
+            elif mag_count <= strong_z_range.h_g_range:
+                ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
+                caliber[ammo_in_bag] = ammo_and_bag_count['bag_count']
+                mag_count = ammo_and_bag_count['mag_count']
+            if weapons_switch == '2':
+                partial = 3
+                print "there are %r zombies left \n\n" % zombie_count
+                return
+            print "you killed a zombie " 
+            zombie_count = zombie_count - 1
         stamina = stamina - weak_z_range.r_stamina
-        #stamina_killer()
+        stamina_killer()
         print "ammo left in bag for this weapon is now %r" % caliber[ammo_in_bag]
         print "your have %s rounds in weapon" % mag_count
         print "your stamina is now %s" % stamina
@@ -1384,30 +1416,35 @@ def zombie_engine():
             print "you slashed and killed a zombie"
             zombie_count = zombie_count - 1
         stamina = stamina - strong_z_range.h_g_stamina
-        #stamina_killer()
+        stamina_killer()
         print "Your stamina is now %s" % stamina
     elif Zombies == 'Strong' and weapon == 'Riffle':
-        mag_count = mag_count -  strong_z_range.r_range
         for z in range(zombie_count):
-            if 2 <= mag_count < 4:
+            kill_range = strong_z_range.r_range
+            print "k_range %r" % kill_range
+            print "riffle range is %r" % strong_z_range.r_range
+            if 1 <= mag_count < 4:
                 print "You are about to run out of ammo"
+            if mag_count >= strong_z_range.r_range:
+                mag_count = mag_count - strong_z_range.r_range
             #:This checks if the zombie is going to run ammo down to zero or lower
-            if weak_z_range.h_g_range >= mag_count:
-                ammo_and_bag_count = active_ammo_in_bag(mag_count)
+            elif mag_count <= strong_z_range.r_range:
+                ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
                 caliber[ammo_in_bag] = ammo_and_bag_count['bag_count']
-            if weapons_switch == '2': 
+                mag_count = ammo_and_bag_count['mag_count']
+            if weapons_switch == '2':
                partial = 3
                print "there are %r zombies left \n\n" % zombie_count
                return
             print "you killed a zombie "
             zombie_count = zombie_count - 1
-        stamina = stamina - weak_z_range.r_stamina
-        #stamina_killer()
+        stamina = stamina - strong_z_range.r_stamina
+        stamina_killer()
         print "ammo left in bag for this weapon is now %r" % caliber[ammo_in_bag]
         print "your have %s rounds in weapon" % mag_count
         print "your stamina is now %s" % stamina
 
-        
+    stamina_killer()
     print "the battle has finished"
     '''
     after battle of zombies or run out of ammo
@@ -1418,8 +1455,8 @@ def zombie_engine():
     you then count ammo and ask to reload weapon or change weapon
     show weapons available and ammo available for weapons
     continue to next phase of game
-    '''    
-            
+    '''
+
 def fire_fight():
     global player
 
@@ -1451,7 +1488,7 @@ def fire_fight():
         print "hummvee dealership ahead, you start to make your way towards it"
 
 fire_fight()
-    
+
 
 def the_dealership():
     global player
@@ -1468,6 +1505,7 @@ def the_dealership():
 
     shoot_or_run = raw_input(prompt)
     if shoot_or_run == '1':
+        print "You shoose to fight"
         l_mod(0)
     elif shoot_or_run == '2':
         mad_dash = zombie_classes.mad_dash()
@@ -1475,7 +1513,7 @@ def the_dealership():
     else:
         print "wrong choice"
         return the_dealership()
-    
+
     zombie_engine()
     if partial == 3:
         l_mod(3)

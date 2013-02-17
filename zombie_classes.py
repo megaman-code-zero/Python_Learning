@@ -17,13 +17,13 @@ class Avatar():
         prime_vehicle  = 'choice 6: Subaru Impreza 2.0L              HP 148',
         Health_Points  = 100
         Stamina_Points = 100
-        prime_weapons   = ('Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56  ''Weight:  9.05 lbs  Ammo Capacity :30',
-                           'Knife 4:' 'Tops Anaconda Tanto                                Weight: 1.50 lbs Blade  Length:9.5',
-                           'Gun 5:' 'Heckler & Koch MP5K           ' 'Cal: 9mm    ' 'Weight: 4.78 lbs ' 'Ammo Capacity :30',)
+        prime_weapons  = ('Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56   ''Weight:  9.05 lbs  Ammo Capacity :30',
+                          'Knife 4:' 'Tops Anaconda Tanto            (Big Knife)            Weight: 1.50 lbs Blade  Length:9.5',
+                          'Gun 5:' 'Heckler & Koch MP5K           ' 'Cal: 9mm    ' 'Weight: 4.78 lbs ' 'Ammo Capacity :30',)
 
-        semi_prime = ('Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62  ''Weight: 10.93 lbs  Ammo Capacity :20',
-                      'Knife 2:' 'ColdSteel  O Katana                                Weight: 3.00 lbs Blade  Length:36.0',
-                      'Gun 1:' 'Colt New Frontier 44 Special  ' 'Cal:.44     ' 'Weight: 2.80 lbs ' 'Ammo Capacity :6',)
+        semi_prime     = ('Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62   ''Weight: 10.93 lbs  Ammo Capacity :20',
+                          'Knife 2:' 'ColdSteel  O Katana          (Samurai Sword)          Weight: 3.00 lbs Blade  Length:36.0',
+                          'Gun 3:' 'Heckler & Koch P2000SK V2     ' 'Cal:.357    ' 'Weight: 1.50 lbs ' 'Ammo Capacity :13',)
 
     class Victor(bag):
 
@@ -32,13 +32,13 @@ class Avatar():
         prime_vehicle  = 'choice 2: Truck F-350 4X4 Dually    HP 400  Torque 800 ft-lb'
         Health_Points  = 100
         Stamina_Points = 100
-        prime_weapons  = ('Riffle 1:'  'Heckler & Koch MG4  Machinegun               Cal:5.56 M''Weight: 17.96 lbs  Ammo Capacity :200',
-                          'Knife 5:' 'Stanley FatMax Drywall Hammer                      Weight: 14.0 oz  Handle Length:13.5',
+        prime_weapons  = ('Riffle 1:'  'Heckler & Koch MG4  Machinegun               Cal:5.56 M ''Weight: 17.96 lbs  Ammo Capacity :200',
+                          'Knife 5:' 'Stanley FatMax Drywall Hammer                         Weight: 14.0 oz  Handle Length:13.5',
                           'Gun 4:' 'Magnum Research Desert Eagle  ' 'Cal:.50     ' 'Weight: 4.46 lbs ' 'Ammo Capacity :7',)
-
-        semi_prime = ('Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62  ''Weight: 10.93 lbs  Ammo Capacity :20',
-                      'Knife 1:' 'Gerber Parang                                      Weight: 1.35 lbs Blade  Length:13.5'
-                      'Gun 2:' 'Smith & Wesson SW1911DK       ' 'Cal:.45 ACP ' 'Weight: 2.60 lbs ' 'Ammo Capacity :9',)
+                          
+        semi_prime     = ('Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62   ''Weight: 10.93 lbs  Ammo Capacity :20',
+                          'Knife 1:' 'Gerber Parang            (Stout Machete Like Blade)   Weight: 1.35 lbs Blade  Length:13.5',
+                          'Gun 2:' 'Smith & Wesson SW1911DK       ' 'Cal:.45 ACP ' 'Weight: 2.60 lbs ' 'Ammo Capacity :9',)
 
     class Gabriel(bag):
         Name = 'Gabriel'
@@ -46,13 +46,14 @@ class Avatar():
         prime_vehicle  = 'choice 4: Yamaha YZ450F    450CC           HP  55'
         Health_Points  = 100
         Stamina_Points = 100
-        prime_weapons  = ('Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62  ''Weight: 10.93 lbs  Ammo Capacity :20',
-                          'Knife 3:' 'ColdSteel Hatchet spike                            Weight: 1.53 lbs Handle Length:22.0',
-                          'Gun 2:' 'Smith & Wesson SW1911DK       ' 'Cal:.45 ACP  ' 'Weight: 2.60 lbs ' 'Ammo Capacity :9',)
+        
+        prime_weapons  = ('Riffle 5:'  'Heckler & Koch HK417 Semi_Automatic          Cal:7.62   ''Weight: 10.93 lbs  Ammo Capacity :20',
+                          'Knife 3:' 'ColdSteel Hatchet spike                               Weight: 1.53 lbs Handle Length:22.0',
+                          'Gun 2:' 'Smith & Wesson SW1911DK       ' 'Cal:.45 ACP ' 'Weight: 2.60 lbs ' 'Ammo Capacity :9',)
 
-        semi_prime = ('Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56  ''Weight:  9.05 lbs  Ammo Capacity :30',
-                      'Knife 1:' 'Gerber Parang                                      Weight: 1.35 lbs Blade  Length:13.5',
-                      'Gun 1:' 'Colt New Frontier 44 Special  ' 'Cal:.44     ' 'Weight: 2.80 lbs ' 'Ammo Capacity :6',)
+        semi_prime     = ('Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56   ''Weight:  9.05 lbs  Ammo Capacity :30',
+                          'Knife 1:' 'Gerber Parang            (Stout Machete Like Blade)   Weight: 1.35 lbs Blade  Length:13.5',
+                          'Gun 1:' 'Colt New Frontier 44 Special  ' 'Cal:.44     ' 'Weight: 2.80 lbs ' 'Ammo Capacity :6',)
 
 class The_GunRoom(object):
 
@@ -82,11 +83,11 @@ class The_GunRoom(object):
              'Ammo 2: Rem 308         Cal:308      '  'Ammo Weight: 5.0 lbs  Amount:30',
              'Ammo 3: H&K HK416       Cal:5.56     '  'Ammo Weight: 1.5 lbs  Amount:30',
              'Ammo 4: H&K HK417       Cal:7.62     '  'Ammo Weight: 7.0 lbs  Amount:30',
-             'Ammo 5: .44             Cal:.44      ' 'Ammo Weight: 4.5 lbs  Amount:25',
-             'Ammo 6: .45 ACP         Cal:.45 ACP  ' 'Ammo Weight: 4.5 lbs  Amount:25',
-             'Ammo 7: .357            Cal:.357     ' 'Ammo Weight: 4.0 lbs  Amount:25',
-             'Ammo 8: .50             Cal:.50      ' 'Ammo Weight: 6.0 lbs  Amount:25',
-             'Ammo 9: 9mm             Cal: 9mm     ' 'Ammo Weight: 3.5 lbs  Amount:30',]
+             'Ammo 5: .44             Cal:.44      '  'Ammo Weight: 4.5 lbs  Amount:25',
+             'Ammo 6: .45 ACP         Cal:.45 ACP  '  'Ammo Weight: 4.5 lbs  Amount:25',
+             'Ammo 7: .357            Cal:.357     '  'Ammo Weight: 4.0 lbs  Amount:25',
+             'Ammo 8: .50             Cal:.50      '  'Ammo Weight: 6.0 lbs  Amount:25',
+             'Ammo 9: 9mm             Cal: 9mm     '  'Ammo Weight: 3.5 lbs  Amount:30',]
 
 class Garage(object):
     suit = 'motorcycle suit',
