@@ -1247,29 +1247,34 @@ def zombie_engine():
     #Machine Gun Ranges
     def m_g_range():
         ma_range = 'cat'
+
         for x in active_weapon:
-            if '9mm' in x or '5.56 M' in x:
-                print "we are machinegun"
-            if '9mm' in x:
-                wep = '9mm'
-            elif '5.56 M':
+            if '9mm' not in x and '5.56' not in x:
+                return 
+            if '5.56 M' in x:
                 wep = '5.56 M'
-        print wep
+            elif '9mm' in x:
+                wep = '9mm'
+            else:
+                wep = 0
         
         if player.Name == 'Anna' and wep == '9mm':
             ma_range = random.randint(3, 5)
-        elif '9mm' in wep and (player.Name == 'Victor' or player.Name == 'Gabriel'):
-            ma_range = random.randint(7, 13)
         elif player.Name == 'Victor' and wep == '5.56 M' :
             ma_range = random.randint(5, 9)
-        if wep == '5.56 M' and (player.Name == 'Gabriel' or player.Name == 'Anna'):
-            ma_range = random.randint(15, 22)
-        
-        print "in func range kill_range %d" % ma_range
+        elif '9mm' in wep and (player.Name == 'Victor' or player.Name == 'Gabriel'):
+            ma_range = random.randint(7, 11)
+        elif wep == '5.56 M' and (player.Name == 'Gabriel' or player.Name == 'Anna'):
+            ma_range = random.randint(15, 18)
+        else:
+            wep = 0
         return ma_range
     m_range = m_g_range()
-    print m_range
-    
+    if m_range:
+        print "we are range %r" % m_range
+    elif not m_range:
+        print "nothing to see here"
+    exit()
     #:Machinegun Ammo and return bullets at end of fight to weapons mag
     #:two guns shoot more bullets the MP5K 9mm and the machinegun
     #:Weak Zombies
@@ -1281,6 +1286,7 @@ def zombie_engine():
                 print "You are about to run out of ammo"
             if mag_count >= weak_z_range.h_g_range:
                 mag_count = mag_count - weak_z_range.h_g_range
+                print "you have %d bullets left in the chamber" % mag_count
             #:This checks if the zombie is going to run ammo down to zero or lower
             elif mag_count <= weak_z_range.h_g_range:
                 ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
@@ -1312,6 +1318,7 @@ def zombie_engine():
                 print "You are about to run out of ammo"
             if mag_count >= weak_z_range.r_range:
                 mag_count = mag_count - weak_z_range.r_range
+                print "you have %d bullets left in the chamber" % mag_count
             #:This checks if the zombie is going to run ammo down to zero or lower
             elif mag_count <= weak_z_range.r_range:
                 ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
@@ -1338,6 +1345,7 @@ def zombie_engine():
                 print "You are about to run out of ammo"
             if mag_count >= medium_z_range.h_g_range:
                 mag_count = mag_count - medium_z_range.h_g_range
+                print "you have %d bullets left in the chamber" % mag_count
             #:This checks if the zombie is going to run ammo down to zero or lower
             elif mag_count <= medium_z_range.h_g_range:
                 ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
@@ -1364,11 +1372,12 @@ def zombie_engine():
     elif Zombies == 'Medium' and weapon == 'Riffle':
         for z in range(zombie_count):
             kill_range = medium_z_range.r_range
-            print "r_range is %r" % medium_z_range.r_range
+            print "R_range is %r" % medium_z_range.r_range
             if 1 <= mag_count < 4:
                 print "You are about to run out of ammo"
             if mag_count >= medium_z_range.r_range:
-                mag_count = mag_count - medium_z_range.r_range            
+                mag_count = mag_count - medium_z_range.r_range 
+                print "you have %d bullets left in the chamber" % mag_count
             #:This checks if the zombie is going to run ammo down to zero or lower
             elif mag_count <= medium_z_range.r_range:
                 ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
@@ -1421,12 +1430,12 @@ def zombie_engine():
     elif Zombies == 'Strong' and weapon == 'Riffle':
         for z in range(zombie_count):
             kill_range = strong_z_range.r_range
-            print "k_range %r" % kill_range
-            print "riffle range is %r" % strong_z_range.r_range
+            print "K_range %r" % kill_range
             if 1 <= mag_count < 4:
                 print "You are about to run out of ammo"
             if mag_count >= strong_z_range.r_range:
                 mag_count = mag_count - strong_z_range.r_range
+                print "you have %d bullets left in the chamber" % mag_count
             #:This checks if the zombie is going to run ammo down to zero or lower
             elif mag_count <= strong_z_range.r_range:
                 ammo_and_bag_count = active_ammo_in_bag(mag_count,kill_range)
