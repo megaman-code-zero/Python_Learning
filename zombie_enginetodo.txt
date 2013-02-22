@@ -1,6 +1,5 @@
-    #:Quips for when running out of ammo or stamina
-    #:Quips for zombie stabs or shots i.e you dodge you shoot bang bang , depending on
-    #:    ranges and number of stabs or shots taken to destroy zombie
+
+
 
 
 
