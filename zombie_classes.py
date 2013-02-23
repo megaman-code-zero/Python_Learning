@@ -15,7 +15,7 @@ class Avatar():
         Name =  'Anna'
         Anna_stats     = 'age: 19  Weight: 110 lbs Height 5\'3" Pilates Instructor, former Army medic'
         prime_vehicle  = 'choice 6: Subaru Impreza 2.0L              HP 148',
-        Health_Points  = 100
+        Health_Points  = 100 
         Stamina_Points = 100
         prime_weapons  = ('Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56   ''Weight:  9.05 lbs  Ammo Capacity :30',
                           'Knife 4:' 'Tops Anaconda Tanto            (Big Knife)            Weight: 1.50 lbs Blade  Length:9.5',
@@ -359,6 +359,19 @@ def mad_dash():
     print "your own throat, blood gushes out and in about 20 seconds you are dead..."
     print "GRRLLLRLRLRLLRGGRLL..."
 
+def airport_phase():
+    #:#################################################################################################"
+    print "You managed to kill the zombies coming at you inside the dealership, your heart is pumping"
+    print "and make it pass the broken glass with your bag held tightly and start looking for they keys"
+    print "they are at the bottom of the bag and you grabb them, as fast as you can you press the alarm"
+    print "on them several click but they are mostly small cars and finally the one hummer sounds"
+    print "you run to it and struggle with putting the key in the key hole..your hand is shaking"
+    print "you finally think of the lock button on the remote..the locks pop up and you feel relieved"
+    print "you put the key in and it turns on, a small smile flashes on your face"
+    print "it quickly vanishes as you hear thuds against the vehicle, there are 'People' grabbing at "
+    print "the truck, you put in gear and take off, the truck lunges and stops, you failed to see the"
+    print "parking brake still engaged you look around and see the small pedal and disengage it"
+    print "you take off and run down a few of the people and finally make it to the street."
 
 
 
