@@ -494,6 +494,8 @@ def fleet_or_foot():
 fleet_or_foot()
 
 
+#:all vehicles converge on airport, must make stories for other vehicles that made it through
+
 def peninsula_flee():
     global player
     vehicle = player.vehicle
@@ -1472,7 +1474,6 @@ def zombie_engine():
         print "watch your stamina and pick your weapons wisely"
         
     
-
 def fire_fight():
     global player
 

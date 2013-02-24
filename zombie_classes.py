@@ -153,8 +153,8 @@ def remain_in_mansion():
     print "quickly you go down to the basement and are relieved to find stocks of water"
     print "and canned food. As you wait you hear noises coming from the basement vent window"
     print "soon you hear noise coming from within the house"
-    print " you have the door locked and as you look on the TV"
-    print "the picture from a newscopter shows you that all of LA is burning"
+    print " you have the door locked and as you look on the TV\n"
+    print "The picture from a newscopter shows you that all of LA is burning"
     print "you hear movement coming from the house, a few minutes later more noise"
     print "then you hear a thud on the door, then another"
     print "soon you hear the door creaking and a lot of noise just ouside the door"
@@ -189,8 +189,8 @@ def foot_fault():
     print "soon you hear a scream, and then you see two kids come from a house runing"
     print "after them are two other people but they are moving slower, you keep moving"
     print "soon you are near a church, and you hear a great deal of noise, as you are passing by it"
-    print "you notice bits of flesh on the ground and bright red blood"
-    print "a few yards in front you see one of the kids that ran passed you earlier"
+    print "you notice bits of flesh on the ground and bright red blood\n"
+    print "A few yards in front you see one of the kids that ran passed you earlier"
     print "soon you see about a dozen or so people walking your way and more further out"
     print "they walk just like the ones that were after the kids earlier, they get closer, you dodge"
     print "two of them and one of them just barely touches you, they are mumbling and not really"
@@ -241,7 +241,7 @@ def flee():
     print "he lunges at you and you kick the top of his head and he stumbles back and you rush into"
     print "your vehicle you get in and make your way to the hill, you make it past the curb"
     print "the terrain is rough but thanks to the high suspension and all wheel drive, traverse it with"
-    print "ease and soon you are past the fire and on your way to the marina"
+    print "ease and soon you are past the fire and on your way to the marina\n"
 
 def motor_death():
     print "You hop on the motorcycle and make your way out of the mansion "
@@ -296,11 +296,11 @@ def gabriel_hop():
     print "You come up on an instersection, Crenshaw and 235 there are two huge blazing fires"
     print "and cars everywhere. It appears like you cannot make it through.You get off of the bike"
     print "and hop on top of a car to see if there is a way through the cars, but due to the fire"
-    print "the debri you cannot make it trough the cars on the bike, so you decide to chance it"
+    print "and debris you cannot make it trough the cars on the bike, so you decide to chance it"
     print "you get back on the dirt bike you rev it up and you hop on top of the vehicles"
-    print "you have a hard time keeping your balance but you are able to make it sometimes hoping"
-    print "through the hoods of the cars or by going in between them, in no time you make it past the fire"
-    print "and are on your way to the airport."
+    print "you have a hard time keeping your balance but you are able to make it sometimes hopping"
+    print "on the hoods of the cars or by going in between them, in no time you make it past the fire"
+    print "and are on your way to the airport\n."
 
 def vehicle_ditch():
     print "you get on your vehicle and make your way onto the street, and soon you are on the main Blvd"
@@ -315,7 +315,7 @@ def vehicle_ditch():
     print "you realize the only way out is to get pass the wreckage on foot, as you are getting down"
     print "you notice that there are people slowly walking your way and your insticts tell you"
     print "that you should not stay there thinking too long, you grab the bag from your car and"
-    print "start to make your way trough the mess"
+    print "start to make your way trough the mess\n"
 
 def the_fire_fight():
     print "The fires are blazing, you can feel the heat from the fire and can smell the scent of the"
@@ -371,7 +371,65 @@ def airport_phase():
     print "it quickly vanishes as you hear thuds against the vehicle, there are 'People' grabbing at "
     print "the truck, you put in gear and take off, the truck lunges and stops, you failed to see the"
     print "parking brake still engaged you look around and see the small pedal and disengage it"
-    print "you take off and run down a few of the people and finally make it to the street."
+    print "you take off and run down a few of the people and finally make it to the street\n."
+    
+    print "As you make it on the road again, and feeling calm for a minute you see helicopters"
+    print "flying all over the place, the main roads have vehicles of all types crashed burning"
+    print "or flipped upside down, you see injured people walking on the street bleeding, some "
+    print "are running , others are being attacked and stores are being looted"
+    print "you turn on the radio and all the stations seemed to be saying the same thing, there"
+    print "is a city wide mass hysteria, people are urged to stay home and to call 911 in case "
+    print "of emergency. A sense of urgency starts to come over you, as the thought of not making"
+    print "it to the marina grips your mind, you come on to an instersection that seems to be blocked"
+    print "you don't dare get out of the truck to check, you see that all the vehicles blocking the"
+    print "way are abandoned, it seems that you cant get through, so you decide to put the hummer into"
+    print "4-wheel drive, you bump into the car blocking the way and it doesn't budge, so you back up"
+    print "about a foot and and hit the gas, it gives you enough momentum to budge the car a bit and"
+    print "it starts to move, the truck shakes as the bumpers of the car you moved and the one"
+    print "next to it start grinding on the sides. You hear the tires squeel and hope they don't"
+    print "burst from some sharp metal, but you make it through."
+    
+    print "because of all the traffic you decided to take mostly residential streets and only got on"
+    print "major streets when necessary, you've spent two hours driving and the low fuel light turns on"
+    print "because of the chaos you are forced to take a major road and it takes you near the airport"
+    print "you have passes through there a few times before so you are passingly familiar with the area"
+    print "however as you keep driving the truck starts to stutter and you it finally runs out of fule"
+    print "and coasts to a stop. You become freightened knowing that you have about 4 miles to traverse"
+    print "on foot, and its been almost three hours since you left your friends mansion you hope that"
+    print "no one has stolen or that the docks are still serviceable"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
