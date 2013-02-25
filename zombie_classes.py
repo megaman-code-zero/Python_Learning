@@ -359,7 +359,7 @@ def mad_dash():
     print "your own throat, blood gushes out and in about 20 seconds you are dead..."
     print "GRRLLLRLRLRLLRGGRLL..."
 
-def airport_phase():
+def pre_airport():
     #:#################################################################################################"
     print "You managed to kill the zombies coming at you inside the dealership, your heart is pumping"
     print "and make it pass the broken glass with your bag held tightly and start looking for they keys"
@@ -387,16 +387,21 @@ def airport_phase():
     print "about a foot and and hit the gas, it gives you enough momentum to budge the car a bit and"
     print "it starts to move, the truck shakes as the bumpers of the car you moved and the one"
     print "next to it start grinding on the sides. You hear the tires squeel and hope they don't"
-    print "burst from some sharp metal, but you make it through."
+    print "burst from some sharp metal, but you make it through.\n"
     
-    print "because of all the traffic you decided to take mostly residential streets and only got on"
+    print "Because of all the traffic you decided to take mostly residential streets and only got on"
     print "major streets when necessary, you've spent two hours driving and the low fuel light turns on"
     print "because of the chaos you are forced to take a major road and it takes you near the airport"
-    print "you have passes through there a few times before so you are passingly familiar with the area"
-    print "however as you keep driving the truck starts to stutter and you it finally runs out of fule"
+    print "you have passed through there a few times before so you are passingly familiar with the area"
+    print "however as you keep driving the truck starts to stutter and you it finally runs out of fuel"
     print "and coasts to a stop. You become freightened knowing that you have about 4 miles to traverse"
     print "on foot, and its been almost three hours since you left your friends mansion you hope that"
-    print "no one has stolen or that the docks are still serviceable"
+    print "no one has stolen the boat or that the docks are still serviceable, you open the door slowly"
+    print "and hop down as quietly as you can at least all the street lights are on you think, you start"
+    print "to make your way to the marina, all that cardio you use to do at the gym has not gone to waste"
+    print "you think to yourself with a quick smile\n"
+    print "A few yards ahead you see a few people walking very strangely and you decide you're not going"
+    print "to take any chances, you get besides a car and check your bag\n"
     
     
     
@@ -406,8 +411,7 @@ def airport_phase():
     
     
     
-    
-    
+   
     
     
     

@@ -1550,7 +1550,7 @@ def the_airport():
     zombie_count = random.randint(4, 9)
     
     
-    turbulence_story = zombie_classes.airport_phase()
+    #turbulence_story = zombie_classes.airport_phase()
 
     shoot_or_run = raw_input(prompt)
     if shoot_or_run == '1':
