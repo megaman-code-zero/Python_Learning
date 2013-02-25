@@ -14,6 +14,7 @@ prompt = "//:>"
 #:Missing story if you have a weapon but no ammo and no knife
 
 
+global stamina
 
 def open():
     print r'''
@@ -494,33 +495,46 @@ def fleet_or_foot():
 fleet_or_foot()
 
 
-#:all vehicles converge on airport, must make stories for other vehicles that made it through
+stamina = player.Stamina_Points
+air_flee = 0
 
+#:all vehicles converge on airport, must make stories for other vehicles that made it through
+#global air_flee
 def peninsula_flee():
     global player
+    #global air_flee
     vehicle = player.vehicle
     truck = zombie_classes.Garage.truck
     motorcycle = zombie_classes.Garage.Motorcycle
     car = zombie_classes.Garage.Car
+    
 
-
-    if player.Name == 'Anna' or player.Name == 'Victor':
+    if player.prime_vehicle[0] == player.vehicle[0]:
+        print "here we are"
+        zombie_classes.flee()
+        air_flee = 1
+        return air_flee
+    elif player.Name == 'Anna' or player.Name == 'Victor':
         if player.vehicle [0] == motorcycle[0] or player.vehicle[0] == motorcycle[1]:
             m_death = zombie_classes.motor_death()
-            return open()
+            exit()
         else:
             v_ditch = zombie_classes.vehicle_ditch()
-    elif player.Name == 'Gabriel' and player.vehicle == motorcycle[1]:
+    elif player.Name == 'Gabriel' and player.vehicle[0] == motorcycle[0]:
         gab_death = zombie_classes.gabriel_m_death()
-    elif player.Name == 'Gabriel' and player.prime_vehicle == player.vehicle[0]:
+    elif player.Name == 'Gabriel' and player.prime_vehicle[0] == player.vehicle[0]:
+        print player.prime_vehicle[0]
+        player.vehicle[0]
         g_hop = zombie_classes.gabriel_hop()
-    elif player.prime_vehicle[0] == player.vehicle[0]:
-        zombie_classes.flee()
-        return the_airport()
+        air_flee = 1
+        return air_flee
     else:
         v_ditch = zombie_classes.vehicle_ditch()
+        air_flee = 0
+    air_flee = 0
+    return air_flee
 
-peninsula_flee()
+air_flee = peninsula_flee()
 
 
 def l_mod(partial):
@@ -1130,7 +1144,7 @@ def zombie_engine():
             weapon = 'Knife'
             print "So you have picked a blade to decimate the unrighteous ones, quite brave"
 
-    stamina = player.Stamina_Points
+    #: stamina = player.Stamina_Points
     weak_z_range = zombie_classes.Zombie_Mod.Weak()
     medium_z_range = zombie_classes.Zombie_Mod.Medium()
     strong_z_range = zombie_classes.Zombie_Mod.Strong()
@@ -1268,7 +1282,7 @@ def zombie_engine():
             ma_range = random.randint(3, 5)
         elif player.Name == 'Victor' and wep == '5.56 M' :
             ma_range = random.randint(5, 9)
-        elif '9mm' in wep and (player.Name == 'Victor' or player.Name == 'Gabriel'):
+        elif wep == '9mm' and (player.Name == 'Victor' or player.Name == 'Gabriel'):
             ma_range = random.randint(7, 11)
         elif wep == '5.56 M' and (player.Name == 'Gabriel' or player.Name == 'Anna'):
             ma_range = random.randint(15, 18)
@@ -1299,7 +1313,7 @@ def zombie_engine():
                     partial = 3
                     print "there are %r zombies left \n\n" % zombie_count
                     return
-            print "here isyou killed a zombie "
+            print "you killed a zombie "
             zombie_count = zombie_count - 1
         stamina = stamina - weak_z_range.h_g_stamina
         stamina_killer()
@@ -1334,7 +1348,7 @@ def zombie_engine():
                 partial = 3
                 print "there are %r zombies left \n\n" % zombie_count
                 return
-            print "here isyou killed a zombie "
+            print "you killed a zombie "
             zombie_count = zombie_count - 1
             #print "mag count outside of func is now %d" % mag_count
         stamina = stamina - weak_z_range.r_stamina
@@ -1360,7 +1374,7 @@ def zombie_engine():
                 partial = 3
                 print "there are %r zombies left \n\n" % zombie_count
                 return
-            print "here isyou killed a zombie "
+            print "you killed a zombie "
             zombie_count = zombie_count - 1
         stamina = stamina - medium_z_range.h_g_stamina
         stamina_killer()
@@ -1392,7 +1406,7 @@ def zombie_engine():
                 partial = 3
                 print "there are %r zombies left \n\n" % zombie_count
                 return
-            print "here isyou killed a zombie "
+            print "you killed a zombie "
             zombie_count = zombie_count - 1
         stamina = stamina - medium_z_range.r_stamina
         stamina_killer()
@@ -1455,7 +1469,7 @@ def zombie_engine():
                partial = 3
                print "there are %r zombies left \n\n" % zombie_count
                return
-            print "here isyou killed a zombie "
+            print "you killed a zombie "
             zombie_count = zombie_count - 1
         stamina = stamina - strong_z_range.r_stamina
         stamina_killer()
@@ -1472,8 +1486,7 @@ def zombie_engine():
         print "ammo: %d" % caliber[ammo_in_bag]
     if stamina < 50 > 30:
         print "watch your stamina and pick your weapons wisely"
-        
-    
+                
 def fire_fight():
     global player
 
@@ -1491,21 +1504,18 @@ def fire_fight():
         print "and grab your gun"
         print "luckily the weapon is loaded and you shoot its head, the woman goes limp instantly, the adrenaline is flowing"
         print "through you now, you know how lucky yougt ,so you get up and grab your bag, you make your way past the cars"
-        print "and the fire, you are happy to see a car dealer ship a few yards away."
+        print "and the fire, you are happy to see a car dealer ship a few yards away.\n"
     elif weapon == 'riffle':
         print "and grab a riffle"
         print "luckily the weapon is loaded and you shoot its head, the woman goes limp instantly, the adrenaline is flowing"
         print "through you now, you know got lucky, you get up and grab your bag, you make your way past the cars"
-        print "and the fire, you are happy to see a car dealer ship a few yards away."
+        print "and the fire, you are happy to see a car dealer ship a few yards away.\n"
     elif weapon == 'knife':
         print "grab your knife and slash at its head, you miss, and slash again, this time you hit it slash sqare"
         print "in the head and the woman goes limp, quickly you get up and grab your bag, you look down on the woman and"
         print "you feel a mixture of fear and sadness, you feel like letting out a cry but its somewhere in the back of"
         print "your mind. You start to make your way past the cars and the fire, soon the fire is behind you and you see a"
-        print "hummvee dealership ahead, you start to make your way towards it"
-
-fire_fight()
-
+        print "hummvee dealership ahead, you start to make your way towards it\n"
 
 def the_dealership():
     global player
@@ -1530,13 +1540,18 @@ def the_dealership():
     else:
         print "wrong choice"
         return the_dealership()
-
+    
     zombie_engine()
     if partial == 3:
         l_mod(3)
         zombie_engine()
+    print "\n"
+    final_price = zombie_classes.turn_key()
 
-the_dealership()
+  
+if air_flee == 0:
+    fire_fight()
+    the_dealership()
 
 
 def the_airport():
@@ -1547,27 +1562,25 @@ def the_airport():
     global stamina
     global partial
     partial = 0
-    zombie_count = random.randint(4, 9)
+        
+    print "\n"
+    print "#:############################################################################################"
+    print "#:############################################################################################"
+    print "#:############################################################################################"    
+    print "to continue press 'any' key"
+    raw_input(prompt)
     
-    
-    #turbulence_story = zombie_classes.airport_phase()
+    bag_check = zombie_classes.bag_check()
+    turbulece = zombie_classes.take_off()
+    l_mod(0)
+    print "\n\n"
 
-    shoot_or_run = raw_input(prompt)
-    if shoot_or_run == '1':
-        print "You choose to fight"
-        l_mod(0)
-    elif shoot_or_run == '2':
-        mad_dash = zombie_classes.mad_dash()
-        exit()
-    else:
-        print "wrong choice"
-        return the_airport()
-
+    zombie_count = random.randint(16, 25)
     zombie_engine()
     if partial == 3:
         l_mod(3)
         zombie_engine()
-    
+        
 the_airport()
 
 

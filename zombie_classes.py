@@ -14,7 +14,7 @@ class Avatar():
 
         Name =  'Anna'
         Anna_stats     = 'age: 19  Weight: 110 lbs Height 5\'3" Pilates Instructor, former Army medic'
-        prime_vehicle  = 'choice 6: Subaru Impreza 2.0L              HP 148',
+        prime_vehicle  = 'choice 6: Subaru Impreza 2.0L          (Rally Car)          HP 148',
         Health_Points  = 100 
         Stamina_Points = 100
         prime_weapons  = ('Riffle 4:'  'Heckler & Koch HK416 Semi-Automatic          Cal:5.56   ''Weight:  9.05 lbs  Ammo Capacity :30',
@@ -29,7 +29,7 @@ class Avatar():
 
         Name = 'Victor'
         Victor_stats   = 'age: 37  Weight: 220 lbs Height 6\'4" former amateur body builder, construction worker'
-        prime_vehicle  = 'choice 2: Truck F-350 4X4 Dually    HP 400  Torque 800 ft-lb'
+        prime_vehicle  = 'choice 2: Truck F-350 4X4 Dually (Big Construction Truck)   HP 400  Torque 800 ft-lb',
         Health_Points  = 100
         Stamina_Points = 100
         prime_weapons  = ('Riffle 1:'  'Heckler & Koch MG4  Machinegun               Cal:5.56 M ''Weight: 17.96 lbs  Ammo Capacity :200',
@@ -43,7 +43,7 @@ class Avatar():
     class Gabriel(bag):
         Name = 'Gabriel'
         Gabriel_stats  = 'age: 28  Weight: 173 lbs Height 5\'9" Cycling enthusiast and rider, and videogame player'
-        prime_vehicle  = 'choice 4: Yamaha YZ450F    450CC           HP  55'
+        prime_vehicle  = 'choice 4: Yamaha YZ450F    450CC     (Off-Roading Bike)     HP  55',
         Health_Points  = 100
         Stamina_Points = 100
         
@@ -101,8 +101,8 @@ class Garage(object):
     'choice 4: Yamaha YZ450F    450CC     (Off-Roading Bike)     HP  55',
                  )
     Car = (
-    'choice 5: Porche 911 Turbo S 3.8L      (Super Car)           HP 530',
-    'choice 6: Subaru Impreza 2.0L          (Rally Car)           HP 148',
+    'choice 5: Porche 911 Turbo S 3.8L      (Super Car)          HP 530',
+    'choice 6: Subaru Impreza 2.0L          (Rally Car)          HP 148',
           )
 
 class Zombie_Mod(object): # this is actually just the ranges
@@ -300,7 +300,7 @@ def gabriel_hop():
     print "you get back on the dirt bike you rev it up and you hop on top of the vehicles"
     print "you have a hard time keeping your balance but you are able to make it sometimes hopping"
     print "on the hoods of the cars or by going in between them, in no time you make it past the fire"
-    print "and are on your way to the airport\n."
+    print "and are on your way to the airport.\n"
 
 def vehicle_ditch():
     print "you get on your vehicle and make your way onto the street, and soon you are on the main Blvd"
@@ -359,8 +359,7 @@ def mad_dash():
     print "your own throat, blood gushes out and in about 20 seconds you are dead..."
     print "GRRLLLRLRLRLLRGGRLL..."
 
-def pre_airport():
-    #:#################################################################################################"
+def turn_key():
     print "You managed to kill the zombies coming at you inside the dealership, your heart is pumping"
     print "and make it pass the broken glass with your bag held tightly and start looking for they keys"
     print "they are at the bottom of the bag and you grabb them, as fast as you can you press the alarm"
@@ -371,8 +370,10 @@ def pre_airport():
     print "it quickly vanishes as you hear thuds against the vehicle, there are 'People' grabbing at "
     print "the truck, you put in gear and take off, the truck lunges and stops, you failed to see the"
     print "parking brake still engaged you look around and see the small pedal and disengage it"
-    print "you take off and run down a few of the people and finally make it to the street\n."
+    print "you take off and run down a few of the people and finally make it to the street.\n"
     
+def bag_check():
+    #:#################################################################################################"
     print "As you make it on the road again, and feeling calm for a minute you see helicopters"
     print "flying all over the place, the main roads have vehicles of all types crashed burning"
     print "or flipped upside down, you see injured people walking on the street bleeding, some "
@@ -403,7 +404,18 @@ def pre_airport():
     print "A few yards ahead you see a few people walking very strangely and you decide you're not going"
     print "to take any chances, you get besides a car and check your bag\n"
     
-    
+def take_off():
+        
+    print "there weren't that many walkers so you were able to just walk around them"
+    print "soon you make it to sepulveda blvd, there are cars everywhere, there is a"
+    print "huge fire on one of the airstrips and you can feel a faint, heat coming"
+    print "from it, sirens are sounding all around, some people are trapped in their"
+    print "cars, others walking aimlessly, the vast majority are attacking or"
+    print "fending off the attackers, you know that getting through this mess is not"
+    print "going to be easy, you get between some cars and start making way, fast enough"
+    print "some of the attackers try to get at you, so you get ready and you start fighting"
+    print "back"
+    print "\n\n"
     
     
     
