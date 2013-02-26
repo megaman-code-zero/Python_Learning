@@ -1569,7 +1569,7 @@ def the_airport():
     print "#:############################################################################################"    
     print "to continue press 'any' key"
     raw_input(prompt)
-    
+    print "\n\n"
     bag_check = zombie_classes.bag_check()
     turbulece = zombie_classes.take_off()
     l_mod(0)
@@ -1583,8 +1583,53 @@ def the_airport():
         
 the_airport()
 
+def walking_death():
+    global player
+    global weapon
+    global active_weapon
+    global zombie_count
+    global stamina
+    global partial
+    partial = 0
+    
+    print "\n"
+    print "#:############################################################################################"
+    print "#:############################################################################################"
+    print "#:############################################################################################"    
+    print "to continue press 'any' key"
+    raw_input(prompt)
+    
+    death_march = zombie_classes.death_march()
+    l_mod(0)
+    print "\n\n"
+    zombie_count = random.randint(5, 7)
+    zombie_engine()
+    if partial == 3:
+        l_mod(3)
+        zombie_engine()
+    troll_pass = zombie_classes.road_runner()
 
+walking_death()    
+def final_destination():
+    print "\n"
+    print "#:############################################################################################"
+    print "#:############################################################################################"
+    print "#:############################################################################################"    
+    print "to continue press 'any' key"
+    raw_input(prompt)
+    
+    final_push = zombie_classes.final_run()
+    print "\n"
+    l_mod(0)
+    print  "\n\n"
+    zombie_count = random.randint(3 ,6)
+    zombie_engine()
+    if partial == 3:
+        l_mod(3)
+        zombie_engine()
+    bon_voyage = zombie_classes.sail_away()
 
+final_destination()    
 
 
 

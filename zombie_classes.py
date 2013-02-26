@@ -416,36 +416,109 @@ def take_off():
     print "some of the attackers try to get at you, so you get ready and you start fighting"
     print "back"
     print "\n\n"
+      
+def death_march():
+    print "You barely made it through that parking lot of death at the airport and you still"
+    print "have a few miles to make it to the marina but you are close and even with all the"
+    print "scrapes and tiredness you are starting to feel, you have a glimmer of hope, you"
+    print "continue to march away from the madness behind you, and you quickly learn to avoid"
+    print "people dead, alive or otherwise, you run a few yards then walk everytime you see one"
+    print "if those undead people, you can avoid them as long as you don't get pinned down it"
+    print "appears that they cannot see all too well in the dark but their sense of hearing seems"
+    print "to be very keen,thirty five minutes later you make it to LMU and you can see what has"
+    print "happened around the city trough that vantage point, there are inumberable fires all over"
+    print "the skies seem to be infested with helicpoters and you hear what seem to be fighter jets"
+    print "in the skies, like a searing flash of pain, a feeling of deep sadness comes and passes"
+    print "you have to continue, you can see the marina from where you stand but as all those painful"
+    print "runs you have gone on before, you know that seeing the end does not help your cause at all"
+    print "your body starts to feel weary from all the exersion back there, and you continue if a bit"
+    print "slower. \n"
     
+    print "with only a mile to go you are at the Lincol Jefferson intersection, you can see the bridge"
+    print "up ahead, there are cars there and people walking around, if you get lucky the canal will be"
+    print "low, otherwise you will have a tough time making it through, you start to become a bit agitated"
+    print "the bridge is about 50 yards away and you can hear grunting and some screams, cars are blocking"
+    print "the way through, so you decide to go by the side and check the water level but it's too dark"
+    print "and you know that one wrong step and you will not be able to survive, you curse yourself"
+    print "the situation has forced you to take the bridge and you have to fight your way through again"
+    print "just before you head to the bridge you check you bag once more.\n"
     
+def road_runner():
+    print "\n\nYou just made it out alive, there were not that many monsters to get trough but"
+    print "your weak muscles along with the cramped spaces almost got you killed, you thought you"
+    print "were bitten but you see the wound is a slice from a loose metal body part, you start"
+    print "to feel the pain, and start shuffleling as fast as you can towards the marina, it"
+    print "appears the bleeding is pretty severe, there is a medkit in the yacht you just need"
+    print "to get to it, just up ahead is the entrance to the marina.\n\n"
+
+def final_run():    
     
+    print "There are surprisingly few people there, it seems most rich boat owners couldn't"
+    print "make it to their boats, the few walkers around even in your wounded state are easy"
+    print "to evade as long as you are quiet, since all the lights in the docks are out."
+    print "ten minutes later you make it to the docks on Midano way, you head to the slips"
+    print "of course you think things couldn't be this easy, there are walkers moving about"
+    print "and some of them you can tell from the faint light came from the various restaurants"
+    print "around the area, some hav napkins hanving on their necks others are covered in foods"
+    print "of different kinds, the whole bunch give off a disgusting smell from their medley of"
+    print "fancy aromatic dinners.\n"
     
+    print "With not much time before one of them notices you, you decide that you are going to"
+    print "bang on one of the cars to draw most of them away from the dock entrance and then"
+    print "move in between the parked cars making more noise to distract them that should"
+    print "reduce the number of walkers you have to evade or kill to make it to the dock\n"
     
-    
-    
+    print "You look into your bag hoping there is something you can use to make it to the yacht"
    
+def sail_away():
+    print "The gambit worked as you planned, you made it past the majority and were able"
+    print "to kill the rest, unfortunately you had to leave all your weapons behind you"
+    print "did not have the strength to climb the fence,with anything after falling on your"
+    print "first try, but it doesn't matter now, you limp along onto the slip your friends boat is in"
+    print "you get in and find the control board and do the checks you remember your friend teaching you"
+    print "once, you hit a switch and all the lights on the boat turn on including some very bright"
+    print "search lights, immediately you hear grunting and hissing coming from the gate to the dock"
+    print "and you see that there are far more zombies then you had imagined, a face of terror flashes on"
+    print "your face, adrenaline hits you again and with a quick limp you go and untie the yacht"
+    print "the key was were your buddy always keeps it and you turn on the engines, they come alive instantly"
+    print "and loudly, you check the fuel gauge..!Yes! you think its nice to have a rich friend, with the most"
+    print "delicacy you can manage you manuever the boat out of the slip , it scrapes along the side but it makes"
+    print "it through intact, you move through the marina and then passed it, you are on your way to catalina"
+    print "you look for the medkit and find it, doing the best you can looking at your wound most of the bleeding"
+    print "stopped, now your body cries for sleep and it will be at least an hour and a half til you make it to "
+    print "the island, you set an alarm next to your ear for an our and set the boat on a straight heading\n"
     
+    print "A great thundering wall of sound awakens you, the alarm clock is sounding you are hanging on the side of"
+    print "the yacht water is splashing and you inadvertantly drink some sea water, its darnk and you can't see much"
+    print "you move about and soon end on the top of the slowly sinking remains of the yacht, the boats auto made it"
+    print "to the marina on catalina but couldn't avoid another boat that was going in circles"
+    print "you don't have the strength to swim to shore, but luck is on your side, you see anothe boat moving about"
+    print "it looks like they saw what happened and are going over to investigate, its dawn now, the sun is breaking"
+    print "just.\n"
+    print "The yacht approaches, its an old couple"
+    print "'hey' says the old man, you need any help"
+    print "'sure could use some you say, they toss you a rope and they will drag you up over the water , so you wrap"
+    print "the rope around your waist your arm and legs you don't want to die now you think and you couldn't swim"
+    print "in your weakened state..you slowly begin to get as close to the couples yacht as you can, as you dip your"
+    print "foot into the water, a shark flies trough the air, its fin and part of its tail missing, it aimed for"
+    print "your head and got it, both you and the shark land on the wrekage, the shark is cut open by some sharp"
+    print "edges protruding from the debri, half your face is gone and neck broken, the shark continues flopping"
+    print "around, it has clearly fatal wounds..the Fucking Zombie Shark got you..\n\n"
     
+    print "the End"
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
